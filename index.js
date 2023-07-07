@@ -10,13 +10,13 @@ app.use(cors())
 
 app.use(express.json());
 
-app.use("/user", UserRouter);
-app.use("/posts", PostRouter);
+app.use("/", UserRouter);
+app.use("/", PostRouter);
 app.get("/", (req, res) => {
   res.send("Home Page");
 });
 
-app.listen(1111, async () => {
+app.listen(1112, async () => {
   try {
     await connection;
     console.log("Connected to db");
